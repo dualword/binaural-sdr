@@ -134,6 +134,8 @@ void Receiver::init(){
 
 void Receiver::start() {
     if(freq <= 0) freq = 10000000.0;
+    if (devidx < 0) return;
+
     // Intentionally tune at a higher frequency to avoid DC offset.
     tuner_freq = freq; // + 0.25 * ifrate;
     rtlsdr.reset(new RtlSdrSource(devidx));
