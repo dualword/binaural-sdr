@@ -1,0 +1,14 @@
+Binaural-SDR - software-defined FM radio receiver for Linux.
+
+How to build:
+	- prerequisites: Qt 5.15
+	- qmake
+	- make
+
+Third Party Software:
+	- Qt 5.15      license:LGPL
+	- SoftFM       license:GPL v2
+	- rtl-sdr      license:GPL v2
+
+License: GPL-3 (GPL-3.0-only)
+Source code: https://github.com/dualword/binaural-sdr
