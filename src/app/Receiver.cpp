@@ -134,7 +134,11 @@ void Receiver::init(){
 
 void Receiver::start() {
     if(freq <= 0) freq = 10000000.0;
-    if (devidx < 0) return;
+
+    vector<string> devnames = RtlSdrSource::get_device_names();
+    if (devidx < 0 || (unsigned int)devidx >= devnames.size()) {
+        return;
+    }
 
     // Intentionally tune at a higher frequency to avoid DC offset.
     tuner_freq = freq; // + 0.25 * ifrate;
